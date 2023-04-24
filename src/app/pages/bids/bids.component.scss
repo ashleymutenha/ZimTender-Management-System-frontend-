@@ -1,0 +1,36 @@
+.btn-home{
+    background: rgb(238, 232, 232);
+    color:#000000
+}
+
+.btn-home:hover{
+    background:rgb(141, 219, 141)
+
+}
+
+.inner-card{
+    border: 1px solid rgb(243, 240, 240);
+    border-radius: 10px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    width:20rem;
+    height:12rem;
+    
+}
+
+.tender-arrengement{
+    display:inline-flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.__option:hover{
+  border-bottom: lightblue 1px solid;
+  color:darkgreen;
+  cursor:pointer
+}

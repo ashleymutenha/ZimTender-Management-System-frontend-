@@ -1,0 +1,6 @@
+<app-tenders *ngIf ="api.currentState =='home'"></app-tenders>
+<app-authentication *ngIf ="api.currentState =='auth'"></app-authentication>
+<app-user *ngIf = "api.currentState =='user-profile'"></app-user>
+<app-bidding-page *ngIf ="api.currentState =='bid'"></app-bidding-page>
+<app-tenderinfo *ngIf ="api.currentState =='tender-info'"></app-tenderinfo>
+<app-bids *ngIf ="api.currentState =='bids'"></app-bids>

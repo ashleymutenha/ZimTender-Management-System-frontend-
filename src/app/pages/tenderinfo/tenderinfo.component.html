@@ -1,0 +1,92 @@
+<div  class = "mt-3 row" style = "margin-bottom: 30px; border-bottom: 1px solid rgb(228, 228, 228);">
+    <div class = "col-md-9 text-muted" ><h3 style = "margin-left: 20px;"
+         style="margin-left: 20px; color:rgb(9, 78, 40) ;
+         ">Tender Details</h3>
+         <h5 style="margin-left: 25px; color:rgb(120, 211, 143)">{{tender.tenderID}}</h5>
+   </div>
+
+   <div class ="col-md-3">
+
+    <button style = "margin-left: 20px;" class ="btn btn btn-home mb-2" (click) ="gotoHome()"
+        >
+
+        Home <i class = "bi bi-house"></i>
+
+</button>
+
+   </div>
+
+       
+   
+   </div>
+
+
+   <div style ="margin-left: 20px;" class ="fs-5">
+    <ul class ="list-group list-group-flush">
+        <h2 class ="mt-2 mb-2 text-muted">Organisational Details</h2>
+        <li class ="list-group-item">
+            
+            <div class ="input-group">
+    <button class ="btn btn fs-5" style ="border-radius: 50%; background:rgb(79, 167, 79); color:#ffff;">
+       <i class ="bi bi-bookmark"></i>
+    </button> <h3 style ="margin-left: 10px; color:rgb(53, 85, 128)">Organisation Name</h3></div>
+
+    <div style ="margin-left: 70px;">{{user.organisation}}</div>
+
+
+    <div></div>
+
+    </li>
+
+    <li class ="list-group-item">
+
+        <div class ="input-group">
+<button class ="btn btn fs-5" style ="border-radius: 50%; background:rgb(79, 167, 79); color:#ffff;">
+   <i class ="bi bi-envelope"></i>
+</button> <h3 style ="margin-left: 10px; color:rgb(53, 85, 128)">Email</h3></div>
+
+<div style ="margin-left: 70px;">{{user.username}}</div>
+
+
+<div></div>
+
+</li>
+
+   <h2 class ="text-muted mt-2 mb-2">Tender Details</h2>
+
+   <li class ="list-group-item">
+
+    <div class ="input-group">
+<button class ="btn btn fs-5" style ="border-radius: 50%; background:rgb(79, 167, 79); color:#ffff;">
+<i class ="bi bi-pen"></i>
+</button> <h3 style ="margin-left: 10px; color:rgb(53, 85, 128)">Tender Title</h3></div>
+
+<div style ="margin-left: 70px;">{{tender.title}}</div>
+
+
+<div></div>
+
+</li>
+
+<li class ="list-group-item">
+
+    <div class ="input-group">
+<button class ="btn btn fs-5" style ="border-radius: 50%; background:rgb(79, 167, 79); color:#ffff;">
+<i class ="bi bi-book"></i>
+</button> <h3 style ="margin-left: 10px; color:rgb(53, 85, 128)">Tender Description</h3></div>
+
+<div style ="margin-left: 70px;">{{tender.description}}</div>
+
+
+<div></div>
+
+</li>
+    </ul>
+    <div class ="btn-group mt-2">
+    <button class ="btn btn rounded-pill btn-additional">Additional Details <i class ="bi bi-arrow-down"></i></button>
+    <button class ="btn btn rounded-pill btn-additional" style ="margin-left: 10px;"
+    (click) ="placeBid()">Place Bid <i class ="bi bi-check-all">
+
+    </i></button>
+    </div>
+   </div>

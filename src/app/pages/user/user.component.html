@@ -1,0 +1,78 @@
+<div>
+
+    
+
+    <div  class = "mt-3 row" style = "margin-bottom: 30px; border-bottom: 1px solid rgb(228, 228, 228);">
+     <div class = "col-md-9 text-muted" ><h3 style = "margin-left: 20px; color:rgb(24, 134, 24);">{{user.username}}</h3>
+    </div>
+
+    <div  class ="col-md-3">  <button style = "margin-left: 20px;" class ="btn btn"
+        >
+        <i class="bi bi-bell-fill  fs-4" 
+        style ="margin-top: 40px;"></i> <button *ngIf ="showNotificationIcon()" class ="btn btn-success mt-1 text-center" style ="
+        border-radius: 49%;height:28px;width:28px; padding-top: 2px; padding-left: 10%; ; padding-right: 10%;">{{notificationNumber()}}</button>
+    </button>  <button style = "margin-left: 20px;" class ="btn btn"
+    (click) ="__addTender()">
+    <i class="bi bi-plus-circle fs-4"></i>
+</button>
+
+ <button style = "margin-left: 20px;" class ="btn btn"
+ (click) ="logout()">
+<i class="bi bi-box-arrow-in-left fs-4"></i>
+</button>
+
+</div>
+
+        
+    
+    </div>
+   
+    <!--SHOW ACCOUNT TENDERS-->
+    <div *ngIf ="addTender ==false">
+        <ul class ="list-group list-group-flush" *ngIf = "tenders.length !=0">
+            <li class ="list-group-item" *ngFor ="let tender of tenders , let i =index">
+                <button class ="btn btn " style = "border-radius: 50% ; background: rgb(82, 235, 82); 
+                margin-right: 10px;">{{i+1}}</button>
+                <button class ="btn btn rounded-pill fs-5 " style ="background:rgb(170, 248, 205)">{{tender.title}}</button>
+                <div class ="mt-2">{{tender.description}}</div>
+
+                <div class="btn-group">
+                    <button class ="btn btn mt-1" style ="background:rgb(206, 128, 206)"(click) ="deleteTender(tender.tenderID)"><i class="bi bi-trash"></i></button>
+                    <!-- <button class ="btn  mt-1" style = "margin-left: 10px; background:rgb(132, 223, 132);color:black"><i class="bi bi-archive"></i></button> -->
+                    <button class ="btn btn mt-1" style = "margin-left: 10px; background:rgb(226, 217, 217)"
+                    (click) ="editTender(tender.tenderID)"><i class="bi bi-pencil"></i></button>
+
+                    <button class = "btn btn mt-1" (click) ="showBids(tender)"
+                    style ="background: rgb(144, 78, 170);color:#ffff ;margin-left: 10px;">Bids
+                    <!-- <i class ="bi bi-bookmark"></i>-->  <button class ="btn "
+                    style ="margin-left: 5px;border-radius: 50%;background:rgb(157, 238, 191) ;">{{tender.bidNo}}
+
+                        </button>
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <div  *ngIf = "tendersFound" style = "margin-left: 30%; margin-top: 10%;" class ="fs-4">
+            <i class ="bi bi-exclamation-triangle text-success "></i>  No Tenders Registered to this account 
+        </div>
+    </div>
+
+    <!--Add Tender-->
+    <div style = "border: 1px dashed rgb(141, 240, 149); margin-left: 5%; margin-right: 8%; margin-top: 4%;" *ngIf ="addTender ==true" >
+        
+        <div class ="add-tender">
+        <input class ="form-control " type ="text" placeholder ="Tender Title" [(ngModel)] ="tenderTitle"/>
+        <textarea class ="form-control mt-2" type ="text" placeholder ="Tender Content"  [(ngModel)] ="tenderContent"></textarea>
+
+        <button class ="btn btn rounded-pill mt-2" 
+        style ="background: rgb(132, 223, 132); margin-bottom: 10px;"(click) ="registerTender()"*ngIf ="updateTenderMode !=true">Register Tender 
+            <i class ="bi bi-plus"></i></button>
+
+        <button class ="btn btn rounded-pill mt-2" style ="background: rgb(132, 223, 132); margin-bottom: 10px;"(click) ="updateTender()" *ngIf ="updateTenderMode ==true">Update Tender 
+            <i class ="bi bi-plus"></i></button>
+        </div>
+
+    </div>
+
+    </div>

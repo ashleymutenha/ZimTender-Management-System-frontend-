@@ -1,0 +1,92 @@
+<div>
+
+    
+    <div  class = "mt-3 row" style = "margin-bottom: 30px; border-bottom: 1px solid rgb(228, 228, 228);">
+     <div class = "col-md-9 text-muted"  ><span style = "margin-left: 20px;" class ="fs-3" >TenderID : </span >
+        <span class ="fs-4" style ="color:rgb(114, 226, 114)">{{tender.tenderID}}</span>
+    </div>
+
+    <div class ="col-md-3">  <button style = "margin-left: 20px;" class ="btn btn btn-details mb-2"
+        (click) ="tenderDetails(tender)">
+
+        Tender Details <i class = "bi bi-info-circle"></i>
+
+</button>
+
+<button style = "margin-left: 20px;" class ="btn btn btn-home mb-2" (click) ="gotoHome()"
+        >
+
+        Home <i class = "bi bi-house"></i>
+
+</button>
+
+        
+    
+    </div>
+   </div>
+ 
+
+    <!--Add Tender-->
+    <div style = "border: 1px dashed rgb(187, 247, 192); margin-left: 5%; margin-right: 8%;"  >
+
+        <div *ngIf ="bidSuccessfull" class ="fs-6" style ="background:rgb(57, 99, 57); 
+    margin-top:20px; color:white; margin-left: 40%; margin-right:30%;
+    padding-left: 30px; padding-right: 20px;padding-top: 10px;padding-bottom: 10px;">
+    <i class = "bi bi-bell"></i>  Bid Successfully Made   <i class ="bi bi-x" 
+    style = "margin-left: 20px;" (click) ="closeBidSuccessNotification()"></i>
+    </div>
+
+    <div *ngIf ="guestUser" class ="fs-6 mt-2" style ="background:rgb(58, 140, 187); 
+    margin-top:20px; color:white; margin-left: 40%; margin-right:30%;
+    padding-left: 30px; padding-right: 20px;padding-top: 10px;padding-bottom: 10px;">
+      <i class = "bi bi-bell"></i> Use the email you used as username to login as guest (no password required)  
+    <i class ="bi bi-x" style = "margin-left: 20px;" (click) ="closeguestUserNotification()"></i>
+    </div>
+       
+        <div class ="add-tender">
+            <button class ="btn btn btn-home mb-2">Attach Documents </button>
+
+        <div class ="input-group">
+            <button class ="btn btn btn-secondary"><i class ="bi bi-bookmark"></i></button>
+        <input class ="form-control " type ="text" placeholder ="Organisation's Name" [(ngModel)] ="bidderName" />
+        </div>
+        
+        <!-- <div class ="input-group mt-1">
+            <button class ="btn btn btn-secondary"><i class =" bi bi-building"></i></button>
+        <select class ="form-control "  [(ngModel)] ="bidderOrgType">
+            <option value ="Organisation"  class ="form-control">Organisation</option>
+            <option value ="Individual" class ="form-control">Individual</option>
+        </select>
+        </div> -->
+
+
+        
+        <div class ="input-group mt-1">
+            <button class ="btn btn btn-secondary"><i class =" bi bi-pin"></i></button>
+        <input class ="form-control" type ="text" placeholder="Location" [(ngModel)] ="bidderLocation"/>
+        </div>
+
+        <div class ="input-group mt-1">
+            <button class ="btn btn btn-secondary"><i class =" bi bi-envelope"></i></button>
+        <input class ="form-control" type ="text" placeholder="user@domain.com" [(ngModel)] ="bidderUsername"/>
+        </div>
+
+        
+        <div class ="input-group mt-1">
+            <button class ="btn btn btn-secondary"><i class =" bi bi-phone"></i></button>
+        <input class  ="form-control " type = "phone" placeholder ="Phone Number" [(ngModel)] ="bidderPhone"/>
+        </div>
+        
+        <div class ="input-group mt-1">
+            <button class ="btn btn btn-secondary"><i class =" bi bi-cash"></i></button>
+        <input class  ="form-control" type = "number" placeholder ="Bid Value (USD)" [(ngModel)] ="bidValue"/>
+        </div>
+
+        <button class ="btn btn rounded-pill mt-2" style ="background: rgb(132, 223, 132); margin-bottom: 10px;"
+        (click) ="placeBid()">Bid
+            <i class ="bi bi-check-all"></i></button>
+        </div>
+
+    </div>
+
+    </div>

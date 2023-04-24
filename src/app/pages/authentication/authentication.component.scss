@@ -1,0 +1,54 @@
+.login{
+    margin-top: 10%;
+    margin-bottom: 30%;
+
+    margin-left: 40%;
+    margin-right: 50%;
+
+    border: 1px solid rgb(56, 156, 56);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 25rem;
+
+    padding-top: 10px;
+
+    padding-bottom: 10px;
+}
+
+.inner-login-content{
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgb(230, 227, 227);
+}
+
+input{
+    border: 1px solid rgb(56, 156, 56) ;
+}
+
+.correctPassword{
+    margin-top: 10px;
+    border-color: rgb(56, 156, 56) ;
+}
+
+.correctCredentials{
+    border-color: rgb(56, 156, 56) ;
+}
+
+.wrongCredentials{
+    border-color:red;
+}
+
+.wrongPassword{
+    margin-top:10px;
+    border-color:red;
+}
+
+.btn-home{
+    background: rgb(238, 232, 232);
+    color:#000000
+}
+
+.btn-home:hover{
+    background:rgb(141, 219, 141)
+    
+}
